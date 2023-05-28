@@ -32,6 +32,13 @@ const langConfig = [
     ext: ".js",
     image: "node",
   },
+  {
+    language: "cpp",
+    getCommand: (file) =>
+      `gcc -o ${file.split(".")[0]} ${file} && ${file.split(".")[0]}`,
+    ext: ".cpp",
+    image: "gcc",
+  },
 ];
 let parentConfig = [
   {
@@ -48,6 +55,17 @@ let parentConfig = [
     int main() {
     ${code}
     return 0;
+    }`,
+  },
+  {
+    language: "cpp",
+    getCode: (code) => `#include <iostream>
+    using namespace std;
+    
+    int main()
+    {
+       ${code}
+       return 0;
     }`,
   },
 ];
