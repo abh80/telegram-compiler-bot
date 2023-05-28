@@ -26,6 +26,12 @@ const langConfig = [
     ext: ".c",
     image: "gcc",
   },
+  {
+    language: "js",
+    getCommand: (file) => `node ${file}`,
+    ext: ".js",
+    image: "node",
+  },
 ];
 let parentConfig = [
   {
